@@ -67,7 +67,7 @@
     box-sizing: border-box;
     position: relative;
     background-image: url(../img/header_layers.jpg);
-    background-size: cover;
+    background-size: contain;
 }
 .main-header-top {
     width: 1170px;
@@ -140,8 +140,7 @@
     color: blue;
 }
 label,
-.main-menu-wrap,
-#main-menu {
+#main-menu-button {
     display: none;
 }
 .btn-wrapper {
@@ -1609,90 +1608,170 @@ time {
     .pagination,
     .second,
     .third,
-    .projects {
+    .projects,
+    .statistic,
+    .footer-top {
         display: none;
     }
+    * {
+        margin: 0;
+        padding: 0;
+    }
     .container {
-        width: 576px;
+        width: 100%;
         margin: 0 auto;
     }
     .main-header {
         width: 100%;
+        min-height: 100px;
+        padding: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-sizing: border-box; 
+    }
+    .main-header-top {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
     }
     .menu-line {
+        display: flex;
+        width: 100%;
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+        position: relative;
+    }
+    .btn-wrapper {
         display: none;
     }
     label {
         display: block;
         width: 30px;
         height: 30px;
-        padding: 5px;
-        background-color: blue;
+        background-color: transparent;
+        position: absolute;
+        top: 60px;
+        left: 315px;
     }
     label > div {
         width: 20px;
         height: 4px;
+        margin: 5px 0;
         background-color: #fff;
         transform-origin: top right;
         transition: 0.3s ease-out;
     }
-    .upper {
-        transform: rotate(-45deg) translate(-3px,-6px);
-        height: 5px;
-    }
-    .bottom {
-        transform: rotate(45deg) translate(-3px,1px);
-        height: 5px;
-    }
-    .middle {
-        opacity: 0;
+    #main-menu-button {
+        position: absolute;
+        top: 80px;
+        left: 320px;
+        z-index: 1;
     }
     .main-menu {
         visibility: hidden;
         display: flex;
+        width: 100%;
+        min-height: 120px;
         flex-direction: column;
+        position: relative;
+    }
+    .menu {
+        width: 190px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 120px;
+        left: 192px;
+        background-color: #555555;
+    }
+    .menu-list {
+        margin: 0 auto;
     }
     input[type="checkbox"]:checked ~ .main-menu {
     visibility: visible;
     }
+    input[type="checkbox"]:checked ~ .upper {
+        transform: rotate(-45deg) translate(-3px,-6px);
+        height: 5px;
+    }
+    input[type="checkbox"]:checked ~ .bottom {
+        transform: rotate(45deg) translate(-3px,1px);
+        height: 5px;
+    }
+    input[type="checkbox"]:checked ~ .middle {
+        opacity: 0;
+    }
     .first {
         padding: 12px;
     }
-    video {
+    .video-presentation {
         width: 100%;
-        min-height: 211px;
+        height: auto;
     }
-    video-presentation-text {
-        width: 550px;
-        top: 10px;
-        left: 10px;
+    .video-presentation-text {
+        width: 80%;
+        top: 260px;
+        left: 60px;
+    }
+    .video-button {
+        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+    }
+    .video-title {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .video-txt {
+        width: 100%;
+        margin: 0 auto;
     }
     .mobile-app {
         width: 100%;
         display: block;
+        padding: 20px 20px 0 20px;
         box-sizing: border-box;
         background-image: url(../img/iphone_in_hand_10962.png);
-        background-size: 45%;
-        background-position: 20% 30%;
+        background-size: 34%;
+        background-position: 7% 100%;
         background-repeat: no-repeat;
     }
     .mobile-app-photo {
         display: none;
     }
     .mobile-app-text {
-        width: 540px;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mobile-app-title {
+        display: block;
+        text-align: center;
+    }
+    .mobile-app-txt {
+        margin: 20px 0;
     }
     .mobile-app-list {
+        display: block;
+        width: 50%;
         margin: 0 0 0 50%; 
     }
-    .statistic {
-        display: none;
-    }
     .recent-posts {
+        justify-content: space-around;
         padding: 20px 10px 10px;
     }
     .recent-posts-txt {
         padding: 0;
+    }
+    .post-one,
+    .post-two {
+        margin-bottom: 10px;
     }
     .left-arrow-btn {
         display: none;
@@ -1704,5 +1783,23 @@ time {
         width: 100%;
         min-height: 146px;
         padding: 0 20px;
+    }
+    .brands-logo > img {
+        width: 20%;
+        height: 20%;
+    }
+    .footer-bottom {
+        display: block;
+        width: 100%;
+        padding: 30px 0 20px;
+        box-sizing: border-box;
+    }
+    .left-line {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .right-line {
+        width: 70%;
+        margin: 10px auto;
     }
 }
